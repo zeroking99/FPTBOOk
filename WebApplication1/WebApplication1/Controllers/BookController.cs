@@ -12,15 +12,18 @@ namespace WebApplication1.Controllers
         private readonly ApplicationDbContext context;
         public BookController(ApplicationDbContext context)
         {
-            context = context;
+            this.context = context;
 
         }
+        [Route("/")]
         public IActionResult Index()
         {
-            var book = context.Books.ToList();
-            return View(book);
+            
+            return View(context.Books.ToList());
+
         }
-        
+
+        [HttpGet]
 
         public IActionResult Create()
         {
@@ -99,16 +102,6 @@ namespace WebApplication1.Controllers
             return View(book);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Index(string BookSearch)
-        {
-            ViewData["GetBook"] = BookSearch;
-            var query = from item in context.Books select item;
-            if (!string.IsNullOrEmpty(BookSearch))
-            {
-                query = query.Where(b => b.Name.Contains(BookSearch));
-            }
-            return View(await query.AsNoTracking().ToListAsync());
-        }
+
     }
 }

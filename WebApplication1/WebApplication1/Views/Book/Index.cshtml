@@ -1,5 +1,28 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model List<Book>
+
+<h1 class="text-success text-center">Book List</h1>
+<div id="tools">
+    <a id="add" class="btn btn-warning" asp-action="Create">Add new book</a><br /><br />
+    <h5>Search books: </h5>
+    <form id="search" method="get" asp-action="Index">
+        <input type="search" placeholder="Enter the book name" value="@ViewData["GetBook"]" name="BookSearch" style="width: 200px; padding: 5px" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+        <a class="btn btn-primary" asp-action="Index">Get All Books</a>
+    </form>
+</div>
+<div id="book_content">
+    @foreach (Book book in Model)
+    {
+        <ul id="book_list">
+            <li>
+                <a asp-action="Detail" asp-route-id="@book.Id">
+                    <img style="margin: 10px" src="@book.Image" width="180" height="250">
+                </a>
+                <h2>@book.Name</h2>
+                <a class="btn btn-warning" asp-action="Edit" asp-route-id="@book.Id">Edit</a>
+                <a class="btn btn-warning" asp-action="Delete" asp-route-id="@book.Id" onclick="    return confirm('Are you sure you want to remove this book?');">Delete</a>
+                <a class="btn btn-warning" asp-controller="Order" asp-action="Create" asp-route-id="@book.Id">Add to cart</a>
+            </li>
+        </ul>
+    }
+</div>
