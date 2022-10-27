@@ -1,0 +1,14 @@
+﻿@{
+    //Cách 1: dùng Layout mặc định (không cần gõ gì cả)
+    //Location: "~/Views/Shared/_Layout.cshtml"
+
+    //Cách 2: dùng layout tùy biến
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+
+    //Cách 3: không dùng layout nào cả
+    Layout = null;
+
+    //Note: 1 file view chỉ được set 1 layout duy nhất
+}
+
+<h1>This is admin page</h1>

@@ -1,0 +1,33 @@
+﻿@model web9.Models.Employee
+
+<form method="post" asp-controller="Employee" asp-action="Create" class="card p-3 bg-light text-center">
+    <h1 class="text-primary">Tạo mới nhân viên</h1>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+        <span class="h3 text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success">Ngày tháng năm sinh</label>
+        <input class="form-control" asp-for="Birthday" />
+        <span class="text-danger" asp-validation-for="Birthday"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success">Vị trí</label>
+        <input class="form-control" asp-for="Position" />
+        <span class="text-danger" asp-validation-for="Position"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success">Địa chỉ</label>
+        <input class="form-control" asp-for="Address" />
+        <span class="text-danger" asp-validation-for="Address"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success">Lương</label>
+        <input class="form-control" asp-for="Salary" />
+        <span class="text-danger" asp-validation-for="Salary"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-danger" value="OK" />
+    </div>
+</form>

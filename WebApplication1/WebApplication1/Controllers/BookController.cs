@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Data;
@@ -22,17 +24,18 @@ namespace WebApplication1.Controllers
             return View(context.Books.ToList());
 
         }
-
+        
         [HttpGet]
-
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             var category = context.Categories.ToList();
             ViewBag.Categories = category;
             return View();
         }
-
+        
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create(Book book)
         {
             if (ModelState.IsValid)
@@ -54,7 +57,7 @@ namespace WebApplication1.Controllers
             ViewBag.Books = book;
             return View();
         }
-
+       
         public IActionResult Edit(int? id)
         {
             if (id == null)
@@ -68,6 +71,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
+       
         public IActionResult Edit(Book book)
         {
             if (ModelState.IsValid)
@@ -78,7 +82,7 @@ namespace WebApplication1.Controllers
             }
             return View(book);
         }
-
+      
         public IActionResult Delete(int? id)
         {
             if (id == null)
@@ -90,6 +94,7 @@ namespace WebApplication1.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+ 
         public IActionResult Detail(int? id)
         {
             if (id == null)
@@ -101,7 +106,17 @@ namespace WebApplication1.Controllers
                 .FirstOrDefault(m => m.Id == id);
             return View(book);
         }
-
+        [HttpGet]
+        public async Task<IActionResult> Index(string BookSearch)
+        {
+            ViewData["GetBook"] = BookSearch;
+            var query = from item in context.Books select item;
+            if (!string.IsNullOrEmpty(BookSearch))
+            {
+                query = query.Where(b => b.Name.Contains(BookSearch));
+            }
+            return View(await query.AsNoTracking().ToListAsync());
+        }
 
     }
 }

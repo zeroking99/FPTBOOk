@@ -1,19 +1,61 @@
 ﻿@model WebApplication1.Models.Book
 <center>
-    <h1 class="text-success">Book Details</h1><br />
+    <h1 class="text-success">@Model.Name</h1><br />
 </center>
 <br />
-<div id="profile" class="column half">
-    <img src="@Model.Image" width="250" height="350" /> <br />
-    <h2>@Model.Name</h2>
-</div>
-<div class="column last">
-    <a asp-action="Book_Category" asp-route-id="@Model.CategoryId">
-        <h3>Category: @Model.Category.Name</h3>
-    </a><br />
-    <h3>Author: @Model.Author</h3><br />   
-    <h3>Price: @Model.Price</h3><br />
-  
 
-</div>
+<table>
+    <tr>
+        <th rowspan="3">
+            <div id="profile" class="column half">
+                <img src="@Model.Image" width="250" height="350" /> <br />
+
+            </div>
+        </th>
+        
+    </tr>
+    <tr>
+        <th>
+            <div>
+                <h3>Description</h3>
+            </div>
+        </th>
+       
+    </tr>
+    <tr>
+        <td>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+                Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+                Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.
+                Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.
+            </p><br />
+            <div class="column last">
+                <p>Category: @Model.Category.Name</p>
+                <p>Author: @Model.Author</p>
+                <p style="color:red">Price: @Model.Price</p>
+            </div>
+        </td>
+        
+           
+    </tr>
+   
+    <tr>
+        <th>
+            <div>
+                <h5><a href="#">Buy Now</a></h5>
+                <h5><a href="#">Add to cart</a></h5>
+            </div>
+        </th>
+       
+        
+       
+    </tr>
+</table>
+
+
+
+
+
 

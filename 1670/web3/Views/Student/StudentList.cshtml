@@ -1,0 +1,37 @@
+﻿@model List<Student>
+
+@{
+    var total_student = Model.Count;
+    var count = 0;
+    var total_grade = 0.0;  //double
+    Layout = null;
+}
+
+<div class="container col-md-8 text-center">
+    <h1>Total students: @total_student</h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr class="text text-primary">
+                <th>Student Id</th>
+                <th>Student Name</th>
+                <th>Student Age</th>
+                <th>Student Grade</th>
+                <th>Student Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model) {
+                <tr class="text text-success">
+                    <td>@student.Id</td>
+                    <td>@student.Name</td>
+                    <td>@student.Age</td>
+                    <td>@student.Grade</td>
+                    <td><img src="@student.Image" width="100" height="100"></td>
+                </tr>
+                <p hidden>@(total_grade += student.Grade)</p>
+                <p hidden>@(count++)</p>
+            }
+        </tbody>
+    </table>
+    <h1>Average grade: @(total_grade/count)
+</div>

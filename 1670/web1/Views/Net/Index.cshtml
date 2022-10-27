@@ -1,0 +1,16 @@
+﻿<div class="container col-md-8">
+    @DateTime.Now
+    <img src="~/images/net.png" />
+</div>
+
+@{
+    var x = 3;
+    var y = 5;
+    var z = x + y;
+    var year = DateTime.Now.Year;
+    var yob = 1998;
+    var age = year - yob;
+}
+<h1> z = @z</h1>
+<h3>Current year is @year</h3>
+<h4>You are @age year old now</h4>

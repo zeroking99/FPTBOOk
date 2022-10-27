@@ -1,0 +1,97 @@
+﻿@model List<Book>
+<div class="form-group" >
+    <div class="row">
+        <div class="col-form-label">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/books/Banner/1.png" alt="" width="1500" , height="300">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/books/Banner/2.png" alt="" width="1500" , height="300">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/books/Banner/3.jpg" alt="" width="1500" , height="300">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                Danh mục sản phẩm
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Kỹ Năng Sống</a></li>
+                <li><a class="dropdown-item" href="#">Ngoại Ngữ</a></li>
+                <li><a class="dropdown-item" href="#">Thiếu Nhi</a></li>
+                <li><a class="dropdown-item" href="#">Sách Giáo Khoa</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class= "" ><a class="btn btn-primary" asp-controller="Book" asp-action="Add">Thêm Sản Phẩm</a></div>
+</div>
+
+<div class="row">
+    <div class="col-3 bg-success">Danh Mực Sản Phẩm</div>
+    <div class="col-9">
+        <table class="table table-info">
+            <tr>
+                <th>Book List</th>
+
+            </tr>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th></th>
+            </tr>
+            @foreach (var bo in Model)
+            {
+                <tr>
+                    <td>@bo.Id</td>
+                    <td>@bo.Title</td>
+                    <td>@bo.Name</td>
+                    <td>@bo.Author</td>
+                    <td>@bo.Price</td>
+                    <td>
+                        <a asp-controller="Book" asp-action="Index" asp-route-id="@bo.Id">
+                            <img src="@bo.Image"
+                             width="100" height="100" />
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="Book" asp-action="Edit" class="btn btn-warning"
+                       asp-route-id="@bo.Id">Edit</a>
+                        <a asp-controller="Book" asp-action="Delete" class="btn btn-danger"
+                       asp-route-id="@bo.Id" onclick="return confirm('Are you sure to remove this university ?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+    
+
+</div>

@@ -1,0 +1,30 @@
+﻿@model WebApplication1.Models.University
+
+<div class = "row">
+    <div class="col">
+        <img src="@Model.Logo" />
+    </div>
+    <div class ="col">
+        <table class=" table table-bordered">
+            <tr>
+                <th colspan="2">Student list</th>
+            </tr>
+            <tr>
+                <th>student Id</th>
+                <th>studnet name</th>
+                
+            </tr>
+            @foreach (var std in Model.Student)
+           {
+               <tr>
+                   <td>@std.Id</td>
+                    <td>@std.Name</td>
+                    <td> <a asp-controller="Student" asp-action="Detail" asp-route-id="@std.Id">
+                        <img src="@std.Image">
+                    </a></td>
+               </tr>
+               
+           }
+        </table>
+    </div>
+</div>

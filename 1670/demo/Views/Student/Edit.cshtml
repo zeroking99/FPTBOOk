@@ -1,0 +1,62 @@
+﻿@model demo.Models.Student
+
+<form method="post" asp-controller="Student" asp-action="Edit"> 
+    <h2>Edit student</h2>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.SId" ></label>
+        <input class="form-control" asp-for="@Model.SId" />
+        <span class="text-danger" asp-validation-for="@Model.SId"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success">Full Name</label>
+        <input class="form-control" asp-for="@Model.Name" />
+        <span class="text-danger" asp-validation-for="@Model.Name"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Birthday"></label>
+        <input class="form-control" asp-for="@Model.Birthday" />
+        <span class="text-danger" asp-validation-for="@Model.Birthday"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Email"></label>
+        <input class="form-control" asp-for="@Model.Email" />
+        <span class="text-danger" asp-validation-for="@Model.Email"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Mobile"></label>
+        <input class="form-control" asp-for="@Model.Mobile" />
+        <span class="text-danger" asp-validation-for="@Model.Mobile"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Grade"></label>
+        <input class="form-control" asp-for="@Model.Grade" />
+        <span class="text-danger" asp-validation-for="@Model.Grade"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.IsGraduated"></label>
+        <input asp-for="@Model.IsGraduated" />
+        <span class="text-danger" asp-validation-for="@Model.IsGraduated"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Image"></label>
+        <input class="form-control" asp-for="@Model.Image" />
+        <span class="text-danger" asp-validation-for="@Model.Image"></span>
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Gender"></label><br />
+        <select name="Gender">
+            @if (Model.Gender == 'M')
+           {
+                <option selected value='M'>Male</option>
+                <option value='F'>Female</option>
+            } else {
+                <option value='M'>Male</option>
+                <option selected value='F'>Female</option>
+            }  
+        </select>
+        <span class="text-danger" asp-validation-for="@Model.Gender"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-warning" value="Edit" />
+    </div>
+</form>

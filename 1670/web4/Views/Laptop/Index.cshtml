@@ -1,0 +1,28 @@
+﻿@* Khai báo model để lấy dữ liệu từ Controller (Back-end) *@
+@model List<Laptop>
+
+<div class="container col-md-8 text-center">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Laptop Name</th>
+                <th>Laptop Quantity</th>
+                <th>Laptop Price</th>
+                <th>Laptop Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var laptop in Model)
+           {
+                <tr>
+                    <td>@laptop.Name</td>
+                    <td>@laptop.Quantity</td>
+                    <td>$ @laptop.Price</td>
+                    <td>
+                        <img src="~/images/@laptop.Image" width="100" height="100">
+                    </td>
+                </tr>
+            }       
+        </tbody>
+    </table>
+</div>

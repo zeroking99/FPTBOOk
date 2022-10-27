@@ -44,6 +44,22 @@ namespace WebApplication1.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "A",
+                            ConcurrencyStamp = "179e32d6-6c3b-4bec-a3be-4823e1592b2b",
+                            Name = "Administrator",
+                            NormalizedName = "Administrator"
+                        },
+                        new
+                        {
+                            Id = "B",
+                            ConcurrencyStamp = "abe65f5e-5a03-4a61-b9bd-1a177c1a2d12",
+                            Name = "Customer",
+                            NormalizedName = "Customer"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -133,6 +149,38 @@ namespace WebApplication1.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "3503bc9b-70bd-4084-bd6e-9e29b87c54e0",
+                            Email = "admin@fpt.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "admin@fpt.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAENmkmGGObXbbLspXTDZ//nblJ99KCy1/LrQbcax74aYcv83i/ZUVXe6NIUpAa0Y1Kg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "18921cc9-0a93-4d68-950c-472e64144ac1",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@fpt.com"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "edba3e88-9553-4007-9c73-209bde2cddf9",
+                            Email = "customer@fpt.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "customer@fpt.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEPutwXqqegB4icg6Nmqf7VFl2SH+tPmXGxop3isyoj7Nv1I4HIEwwa0wjZc1XSbB9A==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "6d2b90ea-b65f-47ff-9743-874a3328de5c",
+                            TwoFactorEnabled = false,
+                            UserName = "customer@fpt.com"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -196,6 +244,18 @@ namespace WebApplication1.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "1",
+                            RoleId = "A"
+                        },
+                        new
+                        {
+                            UserId = "2",
+                            RoleId = "B"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -267,6 +327,17 @@ namespace WebApplication1.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Author = "Smith",
+                            CategoryId = 1,
+                            Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
+                            Name = "Nữ Hoàng Tuyết",
+                            Price = 69999.0
+                        });
                 });
 
             modelBuilder.Entity("WebApplication1.Models.Category", b =>
@@ -282,6 +353,13 @@ namespace WebApplication1.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Horror"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

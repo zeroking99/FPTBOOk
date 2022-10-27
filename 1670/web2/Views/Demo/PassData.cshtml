@@ -1,0 +1,15 @@
+﻿<h3>Tuổi: @ViewData["Age"]</h3>
+<h3>Giới tính: @ViewData["Gender"]</h3>
+<h3>Điện thoại: @ViewData["Phone"]</h3>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+    </tr>
+    @foreach (var student in ViewBag.Students)
+    {
+        <tr>
+            <td>@student</td>
+        </tr>
+    }
+</table>

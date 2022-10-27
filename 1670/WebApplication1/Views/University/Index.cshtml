@@ -1,0 +1,24 @@
+﻿@model List<University>
+
+<table class=" table table-bordered">
+    <tr>
+        <th>
+            University ID
+        </th>
+        <th> University  Name</th>
+        <th> University  Address</th>
+        <th> University Logo</th>
+        <th>MeNu</th>
+    </tr>
+    @foreach(var uni in Model){
+        <tr>
+            <td>@uni.Id</td>
+            <td>@uni.Name</td>
+            <td>@uni.Address</td>
+            <td><a><img src="@uni.Logo" /></a></td>
+            <td><a asp-controller="University" asp-action="Update" asp-route-id="@uni.Id" class="btn-danger">Update</a></td>
+            <td><a asp-controller="University" asp-action="Delete" asp-route-id="@uni.Id" onclick="return confirm('Are you sure delete')" class="btn-danger">Delete</a></td>
+        </tr>
+
+    }
+</table>

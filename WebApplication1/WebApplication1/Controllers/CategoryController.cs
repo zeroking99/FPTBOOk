@@ -3,6 +3,8 @@ using System.Linq;
 using WebApplication1.Data;
 using WebApplication1.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
+
 namespace WebApplication1.Controllers
 {
     public class CategoryController : Controller
@@ -28,6 +30,7 @@ namespace WebApplication1.Controllers
             return View(category);
         }
         [HttpGet]
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         { 
             return View();

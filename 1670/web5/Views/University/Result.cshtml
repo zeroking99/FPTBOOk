@@ -1,0 +1,45 @@
+﻿@model List<University>
+
+<div class="container text-center mt-2">
+    <table class="table-bordered p-3">
+        <tr>
+            <th colspan="5" class="h4 text-success">University List</th>
+        </tr>
+        <tr>
+            <th colspan="5"><a asp-controller="University" asp-action="Index">Add more</a></th>
+        </tr>
+        <tr>
+            <th>English Name</th>
+            <th>Vietnamese Name</th>
+            <th>Address</th>
+            <th>Introduction</th>
+            <th>Image</th>
+            <th>Delete</th>
+            <th>Edit</th>
+        </tr>
+        @foreach (var uni in Model)
+       {
+            <tr>
+                <td>@uni.EngName</td>
+                <td>@uni.VieName</td>
+                <td>@uni.Address</td>
+                <td>@uni.Intro</td>
+                <td>
+                    <img src="@uni.Image" width="100" height="100" />
+                </td>
+                <td>
+                    <form method="post" asp-controller="University" asp-action="Delete">
+                        <input type="hidden" name="id" value="@Model.IndexOf(uni)">
+                        <input class="btn btn-danger" type="submit" value="Delete">
+                    </form>
+                </td>
+                <td>
+                    <form method="post" asp-controller="University" asp-action="Edit">
+                        <input type="hidden" name="id" value="@Model.IndexOf(uni)">
+                        <input class="btn btn-warning" type="submit" value="Edit">
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

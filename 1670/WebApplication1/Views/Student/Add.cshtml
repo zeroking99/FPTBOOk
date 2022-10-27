@@ -1,0 +1,48 @@
+﻿@model WebApplication1.Models.Student
+
+<form method="post" asp-controller="Student" asp-action="Add">
+    <h2>Add new student</h2>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.SId"></label>
+        <input class="form-control" asp-for="@Model.SId" />
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success">Full Name</label>
+        <input class="form-control" asp-for="@Model.Name" />
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Birthday"></label>
+        <input class="form-control" asp-for="@Model.Birthday" />
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Email"></label>
+        <input class="form-control" asp-for="@Model.Email" />
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Mobile"></label>
+        <input class="form-control" asp-for="@Model.Mobile" />
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Grade"></label>
+        <input class="form-control" asp-for="@Model.Grade" />
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.IsGraduated"></label>
+        <input asp-for="@Model.IsGraduated" />
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Image"></label>
+        <input class="form-control" asp-for="@Model.Image" />
+    </div>
+    <div class="form-group">
+        <label class="h4 text-success" asp-for="@Model.Gender"></label>
+        <select name="Gender">
+            <option>Select a gender</option>
+            <option value='M'>Male</option>
+            <option value='F'>Female</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-warning" value="Add" />
+    </div>
+</form>

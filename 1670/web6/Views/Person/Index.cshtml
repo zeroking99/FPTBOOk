@@ -1,0 +1,54 @@
+﻿@model List<Person> 
+
+<div class="text-center mt-3">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th colspan="5" class="h2 text-success">PERSON LIST</th>
+            <th colspan="2">
+                <a class="btn btn-primary" asp-controller="Person" asp-action="Add">ADD</a>
+             </th>
+        </tr>
+        <tr>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Mobile</th>
+            <th>Image</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+       {
+         <tr>
+             <td>@(Model.IndexOf(person)+1)</td>
+             <td>@person.Name</td>
+             <td>@person.Age</td>
+             <td>@person.Mobile</td>
+             <td>
+                 <img src="@person.Image" width="100" height="100" />
+             </td>
+             <td>
+                  <form method="get" asp-controller="Person" asp-action="Edit">
+                     <input type="hidden" name="id" value="@Model.IndexOf(person)">
+                     <input class="btn btn-warning" type="submit" value="EDIT">
+                 </form>
+             </td>
+             <td>
+                 <form method="post" asp-controller="Person" asp-action="Delete">
+                     <input type="hidden" name="id" value="@Model.IndexOf(person)">
+                     <input class="btn btn-danger" type="submit" value="DELETE"
+                     onclick="return confirm('Are you sure to delete this person ?');"
+                     >
+                 </form>
+             </td>
+         </tr>   
+       }
+    </tbody>
+</table>
+</div>
+
+
+

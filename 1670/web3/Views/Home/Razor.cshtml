@@ -1,0 +1,69 @@
+﻿@*  
+    comment bằng Raroz
+*@
+
+<!--
+    comment bằng HTML
+-->
+
+@{
+    //comment bằng C# (single line)
+    /*
+     * comment bằng C#
+     * (multiple line)
+     */
+    var fpt = "FPT Cooperation";
+}
+
+<h2>In ra giá trị của biến (dùng 1 a) : @fpt </h2>
+<h2>In ra ký tự a (dùng 2 a) : @@fpt </h2>
+
+@{
+    //gõ code của C# ngay trong Razor
+    int a = 3;
+    int b = 4;
+    int c = 2;
+    int max = 0;
+
+    //if ... else
+    if (a>=b && a>=c) {
+        max = a;
+    } else if (b>=a && b>=c) {
+        max = b;
+    } else {
+        max = c;
+    }
+    // switch ... case
+    var menu = 1;
+    var text = "";
+    switch(menu) {
+        case 1:
+            text = "You have selected menu 1";
+            break;
+        case 2:
+            text = "You have selected menu 2";
+            break;
+        case 3:
+            text = "You have selected menu 3";
+            break;
+        default:
+            text = "Invalid menu";
+            break;
+    }
+}
+<h3>Max is @max </h3>
+<h4>@text</h4>
+<h5>Yêu cầu: In ra chuỗi số từ 1 đến 10 (dùng for)</h5>
+@{
+    for(int i=1; i<=10; i++) {
+        <h6>@i</h6> 
+    }
+}
+<h5>Yêu cầu: In ra chuỗi số từ 1 đến 10 (dùng while)</h5>
+@{
+    int j = 1;
+    while(j<=10) {
+        <h6>@j</h6>
+        <p hidden>@(j++)</p>;
+    }
+}

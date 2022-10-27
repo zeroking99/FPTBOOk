@@ -1,0 +1,36 @@
+﻿@model WebApplication1.Models.Student
+
+<div class="row text-center">
+    <div class="col">
+        <img src="@Model.Image" width="400" height="400">
+    </div>
+    <div class="col">
+        <table class="table-bordered bg-light">
+            <tr>
+                <th colspan="2" class="h3 text-primary">@Model.Name</th>
+            </tr>
+            <tr>
+                <th>Birthday</th>
+                <td>@Model.Birthday.ToShortDateString()</td>
+            </tr>
+            <tr>
+                <th>Mobile</th>
+                <td>@Model.Mobile</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>@Model.Email</td>
+            </tr>
+            <tr>
+                <th>Grade</th>
+                <td>@Model.Grade</td>
+            </tr>
+            <tr>
+                <th>university</th>
+                <td>
+                    <a asp-controller="University" asp-action="Info" asp-route-id="@Model.University.Id">@Model.University.Name</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

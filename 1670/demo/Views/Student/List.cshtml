@@ -1,0 +1,48 @@
+﻿@model List<Student>
+
+@foreach (var s in Model)
+{
+    <ol>
+        <li>Name: @s.Name</li>
+        <li>Student Id: @s.SId</li>
+        <li>DOB: @s.Birthday.ToShortDateString()</li>
+        @{
+            var birthyear = s.Birthday.Year;
+            var currentyear = DateTime.Now.Year;
+            var age = currentyear - birthyear;
+
+        }
+        <li>Birth year: @birthyear</li>
+        <li>Age: @age</li>
+
+        <li>Image: 
+            <img src="@s.Image" width="100" height="100">
+        </li>
+        @{
+            var gender = "";
+            if (s.Gender == 'M')
+            {
+                gender = "Male";
+            }
+            else
+            {
+                gender = "Female";
+            }
+        }
+        <li>
+            Gender: @gender
+        </li>
+        @{
+            var note = "";
+        if (s.IsGraduated == true)
+        {
+            note = "Student has graduated !";
+        } else {
+            note = "Student has not graduated yet !";
+         }
+        }
+        <li>
+            Note: @note
+        </li>
+    </ol>
+}

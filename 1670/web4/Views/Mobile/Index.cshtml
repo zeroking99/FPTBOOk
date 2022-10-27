@@ -1,0 +1,64 @@
+﻿@model List<Mobile>
+
+<div class="container col-md-8 text-center">
+    <table class="table table-info">
+        <tr>
+            <th colspan="6" class="h1 text-success">Mobile List (@Model.Count)</th>
+        </tr>
+        <tr>
+            <th>Mobile No.</th>
+            <th>Mobile Name</th>
+            <th>Mobile Brand</th>
+            <th>Mobile Color</th>
+            <th>Mobile Image</th>
+            <th>Note</th>
+        </tr> 
+        @foreach (var m in Model)
+       {
+           <tr>
+               <td>@(Model.IndexOf(m)+1)</td>
+               <td>@m.Name</td>
+               <td>@m.Brand</td>
+               <td>@m.Color</td>
+               <td>
+                   <img src="@m.Image" width="100" height="100">
+               </td>
+               <td>
+                   @if (m.BestSeller == true) {
+                        <span>Best Seller</span>
+                   }
+               </td>
+               
+           </tr>
+       } 
+    </table>
+    <table class="table table-primary mt-3">
+        <tr>
+            <th>Mobile No.</th>
+            <th>Mobile Name</th>
+            <th>Mobile Brand</th>
+            <th>Mobile Color</th>
+            <th>Mobile Image</th>
+            <th>Note</th>
+        </tr>
+        @for (var i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@(i+1)</td>
+                <td>@Model[i].Name</td>
+                <td>@Model[i].Brand</td>
+                <td>@Model[i].Color</td>
+                <td>
+                    <img src="@Model[i].Image" width="100" height="100">
+                </td>
+                <td>
+                    @if (Model[i].BestSeller == true)
+                    {
+                        <span>Best Seller</span>
+                    }
+                </td>
+
+            </tr>
+            } 
+    </table>
+</div>

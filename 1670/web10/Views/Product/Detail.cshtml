@@ -1,0 +1,27 @@
+﻿@model web10.Models.Product
+
+<div class="row">
+    <div class="col">
+        <img src="@Model.Image" width="300" height="300">
+    </div>
+
+    <div class="col">
+        <table class="table table-bordered">
+            <tr>
+                <th colspan="2">@Model.Name</th>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <th>$ @Model.Price </th>
+            </tr>
+             <tr>
+                <th>Color</th>
+                <th>@Model.Color </th>
+            </tr>
+             <tr>
+                <th>Quantity</th>
+                <th>@Model.Quantity</th>
+            </tr>
+        </table>
+    </div>
+</div>
