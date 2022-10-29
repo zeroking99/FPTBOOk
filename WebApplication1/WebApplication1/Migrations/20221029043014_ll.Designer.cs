@@ -10,8 +10,8 @@ using WebApplication1.Data;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221027044514_ni")]
-    partial class ni
+    [Migration("20221029043014_ll")]
+    partial class ll
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,16 +51,23 @@ namespace WebApplication1.Migrations
                         new
                         {
                             Id = "A",
-                            ConcurrencyStamp = "179e32d6-6c3b-4bec-a3be-4823e1592b2b",
+                            ConcurrencyStamp = "53c75044-0a72-44e9-a03c-36e08a6aa79b",
                             Name = "Administrator",
                             NormalizedName = "Administrator"
                         },
                         new
                         {
                             Id = "B",
-                            ConcurrencyStamp = "abe65f5e-5a03-4a61-b9bd-1a177c1a2d12",
+                            ConcurrencyStamp = "37d9a1ae-8fc5-4546-a1ae-1f10e1fe6222",
                             Name = "Customer",
                             NormalizedName = "Customer"
+                        },
+                        new
+                        {
+                            Id = "C",
+                            ConcurrencyStamp = "aa4d0f7a-b7e0-4790-a5f4-fb177fcceb0c",
+                            Name = "Storner",
+                            NormalizedName = "Stornner"
                         });
                 });
 
@@ -157,14 +164,14 @@ namespace WebApplication1.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3503bc9b-70bd-4084-bd6e-9e29b87c54e0",
+                            ConcurrencyStamp = "3ab122fd-5d9d-4075-8867-dd5b66232dd8",
                             Email = "admin@fpt.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin@fpt.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAENmkmGGObXbbLspXTDZ//nblJ99KCy1/LrQbcax74aYcv83i/ZUVXe6NIUpAa0Y1Kg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFC8KbomNYS4C2ELmYxwJ+emfwGi61Ue2s+CVXcUDvSzUdqzKyTg+iZ6+C3hDnp1xQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "18921cc9-0a93-4d68-950c-472e64144ac1",
+                            SecurityStamp = "215c0664-b3ed-4162-82b3-8cc26d151fc2",
                             TwoFactorEnabled = false,
                             UserName = "admin@fpt.com"
                         },
@@ -172,16 +179,31 @@ namespace WebApplication1.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "edba3e88-9553-4007-9c73-209bde2cddf9",
+                            ConcurrencyStamp = "e1870ae8-d374-45f2-9f04-f3369a03611d",
                             Email = "customer@fpt.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "customer@fpt.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPutwXqqegB4icg6Nmqf7VFl2SH+tPmXGxop3isyoj7Nv1I4HIEwwa0wjZc1XSbB9A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAy0w8kVCdl485xkQTlN7qFz+UnbqQ5VGXmonz5SqnipSdOGJU1hBD3XF+ba5S/BwQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6d2b90ea-b65f-47ff-9743-874a3328de5c",
+                            SecurityStamp = "e2830f7e-3980-4066-876b-11bca23fca92",
                             TwoFactorEnabled = false,
                             UserName = "customer@fpt.com"
+                        },
+                        new
+                        {
+                            Id = "3",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "379e4c47-8dfd-421a-9241-fcce1eb59f8e",
+                            Email = "storner@fpt.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedUserName = "storner@fpt.com",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC14e++ayO3++tRZGRqgB6N70GX7pdP22772edl1MofcVf0gMDkpUwZi475UqOU7rA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "f8d0d73f-4f6e-479b-8605-9c379ac5bda2",
+                            TwoFactorEnabled = false,
+                            UserName = "storner@fpt.com"
                         });
                 });
 
@@ -257,6 +279,11 @@ namespace WebApplication1.Migrations
                         {
                             UserId = "2",
                             RoleId = "B"
+                        },
+                        new
+                        {
+                            UserId = "3",
+                            RoleId = "C"
                         });
                 });
 
@@ -339,6 +366,51 @@ namespace WebApplication1.Migrations
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Nữ Hoàng Tuyết",
                             Price = 69999.0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Author = "Thomas",
+                            CategoryId = 1,
+                            Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
+                            Name = "Hoàng Tử Gấu",
+                            Price = 69999.0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Author = "Thomson",
+                            CategoryId = 3,
+                            Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
+                            Name = "Thợ Săn Bóng Đêm",
+                            Price = 69999.0
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Author = "Alpha",
+                            CategoryId = 2,
+                            Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
+                            Name = "Vua Sư Tử",
+                            Price = 69999.0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Author = "Denta",
+                            CategoryId = 3,
+                            Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
+                            Name = "Dải Ngân Hà",
+                            Price = 69999.0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Author = "Catary",
+                            CategoryId = 1,
+                            Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
+                            Name = "Huyền Thoại Võ Thuật",
+                            Price = 69999.0
                         });
                 });
 
@@ -361,6 +433,21 @@ namespace WebApplication1.Migrations
                         {
                             Id = 1,
                             Name = "Horror"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Trinh Thám"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Thiếu Nhi"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Khoa Học Viễn Tưởng"
                         });
                 });
 

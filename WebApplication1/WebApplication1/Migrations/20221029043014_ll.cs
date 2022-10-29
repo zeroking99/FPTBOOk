@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApplication1.Migrations
 {
-    public partial class ni : Migration
+    public partial class ll : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -208,8 +208,9 @@ namespace WebApplication1.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "A", "179e32d6-6c3b-4bec-a3be-4823e1592b2b", "Administrator", "Administrator" },
-                    { "B", "abe65f5e-5a03-4a61-b9bd-1a177c1a2d12", "Customer", "Customer" }
+                    { "A", "53c75044-0a72-44e9-a03c-36e08a6aa79b", "Administrator", "Administrator" },
+                    { "B", "37d9a1ae-8fc5-4546-a1ae-1f10e1fe6222", "Customer", "Customer" },
+                    { "C", "aa4d0f7a-b7e0-4790-a5f4-fb177fcceb0c", "Storner", "Stornner" }
                 });
 
             migrationBuilder.InsertData(
@@ -217,29 +218,44 @@ namespace WebApplication1.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "1", 0, "3503bc9b-70bd-4084-bd6e-9e29b87c54e0", "admin@fpt.com", true, false, null, null, "admin@fpt.com", "AQAAAAEAACcQAAAAENmkmGGObXbbLspXTDZ//nblJ99KCy1/LrQbcax74aYcv83i/ZUVXe6NIUpAa0Y1Kg==", null, false, "18921cc9-0a93-4d68-950c-472e64144ac1", false, "admin@fpt.com" },
-                    { "2", 0, "edba3e88-9553-4007-9c73-209bde2cddf9", "customer@fpt.com", true, false, null, null, "customer@fpt.com", "AQAAAAEAACcQAAAAEPutwXqqegB4icg6Nmqf7VFl2SH+tPmXGxop3isyoj7Nv1I4HIEwwa0wjZc1XSbB9A==", null, false, "6d2b90ea-b65f-47ff-9743-874a3328de5c", false, "customer@fpt.com" }
+                    { "1", 0, "3ab122fd-5d9d-4075-8867-dd5b66232dd8", "admin@fpt.com", true, false, null, null, "admin@fpt.com", "AQAAAAEAACcQAAAAEFC8KbomNYS4C2ELmYxwJ+emfwGi61Ue2s+CVXcUDvSzUdqzKyTg+iZ6+C3hDnp1xQ==", null, false, "215c0664-b3ed-4162-82b3-8cc26d151fc2", false, "admin@fpt.com" },
+                    { "2", 0, "e1870ae8-d374-45f2-9f04-f3369a03611d", "customer@fpt.com", true, false, null, null, "customer@fpt.com", "AQAAAAEAACcQAAAAEAy0w8kVCdl485xkQTlN7qFz+UnbqQ5VGXmonz5SqnipSdOGJU1hBD3XF+ba5S/BwQ==", null, false, "e2830f7e-3980-4066-876b-11bca23fca92", false, "customer@fpt.com" },
+                    { "3", 0, "379e4c47-8dfd-421a-9241-fcce1eb59f8e", "storner@fpt.com", true, false, null, null, "storner@fpt.com", "AQAAAAEAACcQAAAAEC14e++ayO3++tRZGRqgB6N70GX7pdP22772edl1MofcVf0gMDkpUwZi475UqOU7rA==", null, false, "f8d0d73f-4f6e-479b-8605-9c379ac5bda2", false, "storner@fpt.com" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "Name" },
-                values: new object[] { 1, "Horror" });
+                values: new object[,]
+                {
+                    { 1, "Horror" },
+                    { 2, "Trinh Thám" },
+                    { 3, "Thiếu Nhi" },
+                    { 4, "Khoa Học Viễn Tưởng" }
+                });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "UserId", "RoleId" },
-                values: new object[] { "1", "A" });
-
-            migrationBuilder.InsertData(
-                table: "AspNetUserRoles",
-                columns: new[] { "UserId", "RoleId" },
-                values: new object[] { "2", "B" });
+                values: new object[,]
+                {
+                    { "1", "A" },
+                    { "2", "B" },
+                    { "3", "C" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Books",
                 columns: new[] { "Id", "Author", "CategoryId", "Image", "Name", "Price" },
-                values: new object[] { 1, "Smith", 1, "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Nữ Hoàng Tuyết", 69999.0 });
+                values: new object[,]
+                {
+                    { 1, "Smith", 1, "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Nữ Hoàng Tuyết", 69999.0 },
+                    { 2, "Thomas", 1, "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Hoàng Tử Gấu", 69999.0 },
+                    { 6, "Catary", 1, "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Huyền Thoại Võ Thuật", 69999.0 },
+                    { 4, "Alpha", 2, "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Vua Sư Tử", 69999.0 },
+                    { 3, "Thomson", 3, "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Thợ Săn Bóng Đêm", 69999.0 },
+                    { 5, "Denta", 3, "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Dải Ngân Hà", 69999.0 }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

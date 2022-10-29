@@ -42,9 +42,26 @@ namespace WebApplication1.Data
             var Horror = new Category
             {
                 Id = 1,
-                Name = "Horror",             
+                Name = "Horror"        
             };
-            builder.Entity<Category>().HasData(Horror);
+            var Hai = new Category
+            {
+                Id = 2,
+                Name = "Trinh Thám"
+            };
+            var Ba = new Category
+            {
+                Id = 3,
+                Name = "Thiếu Nhi"
+            };
+            var Bon  = new Category
+            {
+                Id = 4,
+                Name = "Khoa Học Viễn Tưởng"
+            };
+             
+            
+            builder.Entity<Category>().HasData(Horror,Hai,Ba,Bon);
         }
 
         private void PopulateBook(ModelBuilder builder)
@@ -54,13 +71,63 @@ namespace WebApplication1.Data
                 {
                     Id = 1,
                     CategoryId = 1,
-                    Name ="Nữ Hoàng Tuyết",
-                    Author ="Smith",
-                    Price=69999,
-                    Image= "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
-                }
-                    
-                );
+                    Name = "Nữ Hoàng Tuyết",
+                    Author = "Smith",
+                    Price = 69999,
+                    Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
+                },
+
+
+            new Book
+            {
+                Id = 2,
+                CategoryId = 1,
+                Name = "Hoàng Tử Gấu",
+                Author = "Thomas",
+                Price = 69999,
+                Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
+            },
+
+            new Book
+            {
+                Id = 3,
+                CategoryId = 3,
+                Name = "Thợ Săn Bóng Đêm",
+                Author = "Thomson",
+                Price = 69999,
+                Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
+            },
+
+            new Book
+            {
+                Id = 4,
+                CategoryId = 2,
+                Name = "Vua Sư Tử",
+                Author = "Alpha",
+                Price = 69999,
+                Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
+            },
+
+            new Book
+            {
+                Id = 5,
+                CategoryId = 3,
+                Name = "Dải Ngân Hà",
+                Author = "Denta",
+                Price = 69999,
+                Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
+            },
+
+            new Book
+            {
+                Id = 6,
+                CategoryId = 1,
+                Name = "Huyền Thoại Võ Thuật",
+                Author = "Catary",
+                Price = 69999,
+                Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
+            }
+            ) ;
         }
 
         private void SeedUserRole(ModelBuilder builder)
@@ -75,6 +142,11 @@ namespace WebApplication1.Data
                 {
                     UserId = "2",
                     RoleId = "B"
+                },
+                new IdentityUserRole<string>
+                {
+                    UserId = "3",
+                    RoleId = "C"
                 }
              );
         }
@@ -93,9 +165,14 @@ namespace WebApplication1.Data
                 Name = "Customer",
                 NormalizedName = "Customer"
             };
-
+            var store_owner = new IdentityRole
+            {
+                Id = "C",
+                Name = "Storner",
+                NormalizedName = "Stornner"
+            };
             //2. add role vào trong DB
-            builder.Entity<IdentityRole>().HasData(admin, customer);
+            builder.Entity<IdentityRole>().HasData(admin, customer,store_owner);
         }
 
 
@@ -122,6 +199,14 @@ namespace WebApplication1.Data
                 NormalizedUserName = "customer@fpt.com",
                 EmailConfirmed = true
             };
+            var storner = new IdentityUser
+            {
+                Id = "3",
+                UserName = "storner@fpt.com",
+                Email = "storner@fpt.com",
+                NormalizedUserName = "storner@fpt.com",
+                EmailConfirmed = true
+            };
 
             //2. khai báo thư viện để mã hóa mật khẩu
             var hasher = new PasswordHasher<IdentityUser>();
@@ -129,9 +214,10 @@ namespace WebApplication1.Data
             //3. thiết lập và mã hóa mật khẩu từng tài khoản
             admin.PasswordHash = hasher.HashPassword(admin, "a123@A");
             customer.PasswordHash = hasher.HashPassword(customer, "a123@A");
+            storner.PasswordHash = hasher.HashPassword(storner, "a123@A");
 
             //4. add tài khoản vào db
-            builder.Entity<IdentityUser>().HasData(admin, customer);
+            builder.Entity<IdentityUser>().HasData(admin, customer,storner);
         
         }
     }

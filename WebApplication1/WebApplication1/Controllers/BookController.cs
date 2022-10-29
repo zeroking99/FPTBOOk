@@ -26,7 +26,7 @@ namespace WebApplication1.Controllers
         }
         
         [HttpGet]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator,Storner")]
         public IActionResult Create()
         {
             var category = context.Categories.ToList();
@@ -35,7 +35,7 @@ namespace WebApplication1.Controllers
         }
         
         [HttpPost]
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator,Storner")]
         public IActionResult Create(Book book)
         {
             if (ModelState.IsValid)
@@ -106,17 +106,16 @@ namespace WebApplication1.Controllers
                 .FirstOrDefault(m => m.Id == id);
             return View(book);
         }
-        [HttpGet]
-        public async Task<IActionResult> Index(string BookSearch)
+        [HttpPost]
+        public IActionResult Index(string BookSearch)
         {
-            ViewData["GetBook"] = BookSearch;
-            var query = from item in context.Books select item;
-            if (!string.IsNullOrEmpty(BookSearch))
-            {
-                query = query.Where(b => b.Name.Contains(BookSearch));
-            }
-            return View(await query.AsNoTracking().ToListAsync());
-        }
 
+            var books = context.Books.Where(boo => boo.Name.Contains(BookSearch)).ToList();
+            if(books.Count == 0)
+            {
+                TempData["Mesage"] = "No Book";
+            }
+            return View("Index",books);
+        }     
     }
 }

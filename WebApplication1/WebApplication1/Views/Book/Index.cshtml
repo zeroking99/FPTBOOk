@@ -1,6 +1,5 @@
 ﻿@model List<Book>
 
-<h1 class="text-success text-center">Book List</h1>
 <div id="tools">  
     @if (User.Identity.IsAuthenticated && User.IsInRole("Administrator")){
         <a id="add" class="btn btn-warning" asp-action="Create">Add new book</a>
@@ -19,20 +18,24 @@
 <div id="book_content">
     @foreach (Book book in Model)
     {
-        <ul id="book_list">
+        <div class="list-inline-item">
             
-                <a asp-action="Detail" asp-route-id="@book.Id">
-                    <img style="margin: 10px" src="@book.Image" width="180" height="250">
-                </a>
-            <h2>@book.Name</h2>
+            <a asp-action="Detail" asp-route-id="@book.Id">
+                 <img style="margin: 10px" src="@book.Image" width="180" height="250">
+            </a>
+             
+            <h6>@book.Name</h6>
+            <h6 style="color:red">Price:@book.Price</h6>
             @if(User.Identity.IsAuthenticated && User.IsInRole("Administrator"))
             {
                 <a class="btn btn-warning" asp-action="Edit" asp-route-id="@book.Id">Edit</a>
-                <a class="btn btn-warning" asp-action="Delete" asp-route-id="@book.Id" onclick="    return confirm('Are you sure you want to remove this book?');">Delete</a>
+                <a class="btn btn-warning" asp-action="Delete" asp-route-id="@book.Id" onclick=" return confirm('Are you sure you want to remove this book?');">Delete</a>
             }
-               
+            
                 <a class="btn btn-warning" asp-controller="Order" asp-action="Create" asp-route-id="@book.Id">Add to cart</a>
             
-        </ul>
+                
+            
+        </div>
     }
 </div>
