@@ -18,6 +18,13 @@
             <input class="form-control" asp-for="Image" />
             <span class="text-black-50 text-danger" asp-validation-for="Image"></span>
         </div>
+        <div class="form-group">
+            <label asp-for="Type"></label><br />
+            <input asp-for="Type" type="radio" value="PDF" />PDF
+            <input asp-for="Type" type="radio" value="PGV" />PGV
+            <span  asp-validation-for="Type"></span>
+        </div>
+      
        
         <label>Select category</label>
         <select class="form-control" asp-for="CategoryId">

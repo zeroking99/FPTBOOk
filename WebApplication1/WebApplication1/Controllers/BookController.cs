@@ -111,11 +111,15 @@ namespace WebApplication1.Controllers
         {
 
             var books = context.Books.Where(boo => boo.Name.Contains(BookSearch)).ToList();
-            if(books.Count == 0)
+            if (books.Count == 0)
             {
                 TempData["Mesage"] = "No Book";
             }
-            return View("Index",books);
-        }     
+            return View("Index", books);
+        }
+
+
+
+
     }
 }

@@ -10,8 +10,8 @@ using WebApplication1.Data;
 namespace WebApplication1.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221029043014_ll")]
-    partial class ll
+    [Migration("20221215084958_kal")]
+    partial class kal
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,21 +51,21 @@ namespace WebApplication1.Migrations
                         new
                         {
                             Id = "A",
-                            ConcurrencyStamp = "53c75044-0a72-44e9-a03c-36e08a6aa79b",
+                            ConcurrencyStamp = "75b9e736-0b7a-468a-8125-b594bea209fb",
                             Name = "Administrator",
                             NormalizedName = "Administrator"
                         },
                         new
                         {
                             Id = "B",
-                            ConcurrencyStamp = "37d9a1ae-8fc5-4546-a1ae-1f10e1fe6222",
+                            ConcurrencyStamp = "5387cde2-5fc6-430c-88ee-1b1bd90c9c0a",
                             Name = "Customer",
                             NormalizedName = "Customer"
                         },
                         new
                         {
                             Id = "C",
-                            ConcurrencyStamp = "aa4d0f7a-b7e0-4790-a5f4-fb177fcceb0c",
+                            ConcurrencyStamp = "ad810cbd-02ca-4e9e-93a9-da7b9e9773eb",
                             Name = "Storner",
                             NormalizedName = "Stornner"
                         });
@@ -164,14 +164,14 @@ namespace WebApplication1.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3ab122fd-5d9d-4075-8867-dd5b66232dd8",
+                            ConcurrencyStamp = "c1b5d541-47fa-4b19-9b11-41dacb442fe8",
                             Email = "admin@fpt.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin@fpt.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFC8KbomNYS4C2ELmYxwJ+emfwGi61Ue2s+CVXcUDvSzUdqzKyTg+iZ6+C3hDnp1xQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEISwzCNm5qrJHzvwkM/9t7OdrhCQepLu+oOFO6dh1+8q8MtkWOVput8rGl2+Fse5lQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "215c0664-b3ed-4162-82b3-8cc26d151fc2",
+                            SecurityStamp = "7bb201d6-dd70-4fbc-939f-a2eaee101344",
                             TwoFactorEnabled = false,
                             UserName = "admin@fpt.com"
                         },
@@ -179,14 +179,14 @@ namespace WebApplication1.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e1870ae8-d374-45f2-9f04-f3369a03611d",
+                            ConcurrencyStamp = "0beca958-d4f7-4196-a9c7-aa6843d72cec",
                             Email = "customer@fpt.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "customer@fpt.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAy0w8kVCdl485xkQTlN7qFz+UnbqQ5VGXmonz5SqnipSdOGJU1hBD3XF+ba5S/BwQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAED68jUjrUOarBKAGPKssz6Gu2+oEbsz8seOI6mGzRe9gk6fU1ApONW7nZU05onmsFQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e2830f7e-3980-4066-876b-11bca23fca92",
+                            SecurityStamp = "8ae47687-faae-4136-86eb-0bd439f63205",
                             TwoFactorEnabled = false,
                             UserName = "customer@fpt.com"
                         },
@@ -194,14 +194,14 @@ namespace WebApplication1.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "379e4c47-8dfd-421a-9241-fcce1eb59f8e",
+                            ConcurrencyStamp = "7849c41d-2f05-402d-8f22-ba7d35a8b859",
                             Email = "storner@fpt.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "storner@fpt.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEC14e++ayO3++tRZGRqgB6N70GX7pdP22772edl1MofcVf0gMDkpUwZi475UqOU7rA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEGUG6V67XaJQaBAZmgdc+gYqz0kJlGTY3pPFRFdk8zERA1SmuMiIQgDXzS6anIhwUQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "f8d0d73f-4f6e-479b-8605-9c379ac5bda2",
+                            SecurityStamp = "80411d3e-4656-47f6-950d-9e80e4e0a87d",
                             TwoFactorEnabled = false,
                             UserName = "storner@fpt.com"
                         });
@@ -339,8 +339,14 @@ namespace WebApplication1.Migrations
                     b.Property<string>("Author")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("BestSaler")
+                        .HasColumnType("bit");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("Datee")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
@@ -350,6 +356,9 @@ namespace WebApplication1.Migrations
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -362,55 +371,73 @@ namespace WebApplication1.Migrations
                         {
                             Id = 1,
                             Author = "Smith",
+                            BestSaler = false,
                             CategoryId = 1,
+                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 651, DateTimeKind.Local).AddTicks(5976),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Nữ Hoàng Tuyết",
-                            Price = 69999.0
+                            Price = 69999.0,
+                            Type = "PDF"
                         },
                         new
                         {
                             Id = 2,
                             Author = "Thomas",
+                            BestSaler = false,
                             CategoryId = 1,
+                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3786),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Hoàng Tử Gấu",
-                            Price = 69999.0
+                            Price = 69999.0,
+                            Type = "PDF"
                         },
                         new
                         {
                             Id = 3,
                             Author = "Thomson",
+                            BestSaler = false,
                             CategoryId = 3,
+                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3834),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Thợ Săn Bóng Đêm",
-                            Price = 69999.0
+                            Price = 69999.0,
+                            Type = "PDF"
                         },
                         new
                         {
                             Id = 4,
                             Author = "Alpha",
+                            BestSaler = false,
                             CategoryId = 2,
+                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3837),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Vua Sư Tử",
-                            Price = 69999.0
+                            Price = 69999.0,
+                            Type = "PDF"
                         },
                         new
                         {
                             Id = 5,
                             Author = "Denta",
+                            BestSaler = false,
                             CategoryId = 3,
+                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3839),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Dải Ngân Hà",
-                            Price = 69999.0
+                            Price = 69999.0,
+                            Type = "PDF"
                         },
                         new
                         {
                             Id = 6,
                             Author = "Catary",
+                            BestSaler = false,
                             CategoryId = 1,
+                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3840),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Huyền Thoại Võ Thuật",
-                            Price = 69999.0
+                            Price = 69999.0,
+                            Type = "PDF"
                         });
                 });
 
@@ -449,6 +476,64 @@ namespace WebApplication1.Migrations
                             Id = 4,
                             Name = "Khoa Học Viễn Tưởng"
                         });
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customer");
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Email")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Order_Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Payment")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BookId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -509,6 +594,19 @@ namespace WebApplication1.Migrations
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Order", b =>
+                {
+                    b.HasOne("WebApplication1.Models.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebApplication1.Models.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId");
                 });
 #pragma warning restore 612, 618
         }

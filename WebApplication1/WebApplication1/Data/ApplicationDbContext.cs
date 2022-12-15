@@ -17,16 +17,20 @@ namespace WebApplication1.Data
         public DbSet<Book> Books { get; set; }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Order> Orders { get;set; }
+
 
         
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            //Note: add dữ liệu cho bảng chứa PK trước
-            //rồi add dữ liệu cho bảng chứa FK sau 
+            //add dữ liệu cho bảng Book
+
             PopulateBook(builder);
+            //add dữ liệu cho bảng Category
             PopulateCategory(builder);
+            
             //add dữ liệu cho bảng User
             SeedUser(builder);
 
@@ -74,6 +78,8 @@ namespace WebApplication1.Data
                     Name = "Nữ Hoàng Tuyết",
                     Author = "Smith",
                     Price = 69999,
+                    Datee = DateTime.Now,
+                    Type = "PDF",
                     Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
                 },
 
@@ -85,6 +91,8 @@ namespace WebApplication1.Data
                 Name = "Hoàng Tử Gấu",
                 Author = "Thomas",
                 Price = 69999,
+                Datee = DateTime.Now,
+                Type = "PDF",
                 Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
             },
 
@@ -95,6 +103,8 @@ namespace WebApplication1.Data
                 Name = "Thợ Săn Bóng Đêm",
                 Author = "Thomson",
                 Price = 69999,
+                Datee = DateTime.Now,
+                Type = "PDF",
                 Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
             },
 
@@ -105,6 +115,8 @@ namespace WebApplication1.Data
                 Name = "Vua Sư Tử",
                 Author = "Alpha",
                 Price = 69999,
+                Datee = DateTime.Now,
+                Type = "PDF",
                 Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
             },
 
@@ -115,6 +127,8 @@ namespace WebApplication1.Data
                 Name = "Dải Ngân Hà",
                 Author = "Denta",
                 Price = 69999,
+                Datee = DateTime.Now,
+                Type = "PDF",
                 Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
             },
 
@@ -125,6 +139,8 @@ namespace WebApplication1.Data
                 Name = "Huyền Thoại Võ Thuật",
                 Author = "Catary",
                 Price = 69999,
+                Datee = DateTime.Now,
+                Type = "PDF",
                 Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0"
             }
             ) ;

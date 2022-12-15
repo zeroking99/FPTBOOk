@@ -22,6 +22,17 @@
             <input class="form-control" asp-for="Author" />
             <span class="text-black-50 text-danger" asp-validation-for="Author"></span>
         </div>
+        <div class="form-group">
+            <label asp-for="@Model.Type"></label><br />
+            <input asp-for="Type" type="radio" value='PDF' />  PDF
+
+            <input asp-for="Type" type="radio" value='PGV' /> PGV
+        </div>
+        <div class="form-group">
+            <label asp-for="Datee"></label>
+            <input class="form-control" asp-for="Datee" />
+            <span class="text-black-50 text-danger" asp-validation-for="Datee"></span>
+        </div>
 
         <div class="form-group">
             <label class="text text-info">Book Image</label>
