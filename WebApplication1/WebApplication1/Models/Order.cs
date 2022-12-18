@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System;
+using System.Collections.Generic;
 
 namespace WebApplication1.Models
 {
@@ -13,7 +14,8 @@ namespace WebApplication1.Models
         public DateTime Order_Date { get; set; }
         [Required]
         public int Quantity { get; set; }
-        public Customer Customer { get; set; }
+        public int Customer { get; set; }
+        public Customer Customers { get; set; }
         public Book Book { get; set; }
     }
     public enum Payment

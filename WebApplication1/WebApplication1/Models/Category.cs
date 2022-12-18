@@ -10,4 +10,6 @@ namespace WebApplication1.Models
         //Navigation Properties
         public ICollection<Book> Books { get; set; }
     }
+     
+    
 }

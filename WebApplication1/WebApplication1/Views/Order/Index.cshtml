@@ -1,26 +1,32 @@
 ﻿@model List<Order>
-<center>
-    <h1>Order List</h1>
-    <br />
-    <table class="table table-responsive text-center">
-        <tr>
-            <th>Order ID</th>
-            <th>Customer Email</th>
-            <th>Order Date</th>
-            <th>Options</th>
-        </tr>
-        @foreach (var order in Model)
-        {
+
+    <center>
+        <h1>Order List</h1>
+        <br />
+
+
+        <table class="table table-responsive text-center">
             <tr>
-                <td>@order.Id</td>
-                <td>@User.Identity.Name</td>
-                <td>@order.Order_Date</td>
-                <td>
-                    <a class="options" asp-action="Detail" asp-route-id="@order.Id">View</a>
-                    <a class="options" asp-action="Delete" asp-route-id="@order.Id" onclick="    return confirm('Are you sure you want to delete this order?');">Delete</a>
-                </td>
+                <th>Order ID</th>
+                <th>Customer Email</th>
+                <th>Order Date</th>
+                <th>Options</th>
             </tr>
-        }
-    </table>
-</center>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>User.Identity.Name</td>
+                    <td>@order.Order_Date</td>
+                    <td>
+                        <a class="options" asp-action="Detail" asp-route-id="@order.Id">View</a>
+                        <a class="options" asp-action="Delete" asp-route-id="@order.Id" onclick="    return confirm('Are you sure you want to delete this order?');">Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+
+    </center>
+
 <a style="margin-left: 50%;" class="btn btn-primary" asp-controller="Home" asp-action="Index">Back</a>

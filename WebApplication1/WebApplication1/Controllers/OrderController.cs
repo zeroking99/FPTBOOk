@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using System.Linq;
 using WebApplication1.Data;
 using WebApplication1.Models;
@@ -13,6 +15,8 @@ namespace WebApplication1.Controllers
         {
             context = _context;
         }
+
+       
         public IActionResult Index()
         {
             var order = context.Orders.ToList();

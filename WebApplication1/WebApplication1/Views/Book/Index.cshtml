@@ -31,8 +31,10 @@
                 <a class="btn btn-warning" asp-action="Edit" asp-route-id="@book.Id">Edit</a>
                 <a class="btn btn-warning" asp-action="Delete" asp-route-id="@book.Id" onclick=" return confirm('Are you sure you want to remove this book?');">Delete</a>
             }
-            
+            @if (User.Identity.IsAuthenticated && User.IsInRole("Customer")){
                 <a class="btn btn-warning" asp-controller="Order" asp-action="Create" asp-route-id="@book.Id">Add to cart</a>
+
+            }
             
                 
             

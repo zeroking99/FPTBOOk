@@ -49,21 +49,21 @@ namespace WebApplication1.Migrations
                         new
                         {
                             Id = "A",
-                            ConcurrencyStamp = "75b9e736-0b7a-468a-8125-b594bea209fb",
+                            ConcurrencyStamp = "6ca7b6dd-7a53-4f0a-8f50-d34512f70575",
                             Name = "Administrator",
                             NormalizedName = "Administrator"
                         },
                         new
                         {
                             Id = "B",
-                            ConcurrencyStamp = "5387cde2-5fc6-430c-88ee-1b1bd90c9c0a",
+                            ConcurrencyStamp = "4b82780f-6390-42e5-bfe5-fb9d364986ef",
                             Name = "Customer",
                             NormalizedName = "Customer"
                         },
                         new
                         {
                             Id = "C",
-                            ConcurrencyStamp = "ad810cbd-02ca-4e9e-93a9-da7b9e9773eb",
+                            ConcurrencyStamp = "0fafc96c-8868-4a88-8d53-975cf8065137",
                             Name = "Storner",
                             NormalizedName = "Stornner"
                         });
@@ -162,14 +162,14 @@ namespace WebApplication1.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c1b5d541-47fa-4b19-9b11-41dacb442fe8",
+                            ConcurrencyStamp = "6563ad85-bb55-4d6f-b9b3-5305a9aa948d",
                             Email = "admin@fpt.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "admin@fpt.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEISwzCNm5qrJHzvwkM/9t7OdrhCQepLu+oOFO6dh1+8q8MtkWOVput8rGl2+Fse5lQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDhgPr45PkpD5kjx3bnT89qq1H9ToBkrcg9BK1YfGfoi12ah2afrKj6rCcJ7WzabvA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7bb201d6-dd70-4fbc-939f-a2eaee101344",
+                            SecurityStamp = "14300933-3e6a-4276-a93a-69914c43c640",
                             TwoFactorEnabled = false,
                             UserName = "admin@fpt.com"
                         },
@@ -177,14 +177,14 @@ namespace WebApplication1.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0beca958-d4f7-4196-a9c7-aa6843d72cec",
+                            ConcurrencyStamp = "c450da08-1010-4a59-82fb-dad915cb788f",
                             Email = "customer@fpt.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "customer@fpt.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAED68jUjrUOarBKAGPKssz6Gu2+oEbsz8seOI6mGzRe9gk6fU1ApONW7nZU05onmsFQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDb0QulCT9AJ5wrgaZyLPl03gPxqHxr4JbT/OLCSkDJA15UmtKtZF9VJpI/HXk6d4w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8ae47687-faae-4136-86eb-0bd439f63205",
+                            SecurityStamp = "bbf6ef39-9911-4c2f-a889-a94f0ef36af3",
                             TwoFactorEnabled = false,
                             UserName = "customer@fpt.com"
                         },
@@ -192,14 +192,14 @@ namespace WebApplication1.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7849c41d-2f05-402d-8f22-ba7d35a8b859",
+                            ConcurrencyStamp = "f244c40e-8c7c-4ec4-b321-71122db5f2ab",
                             Email = "storner@fpt.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedUserName = "storner@fpt.com",
-                            PasswordHash = "AQAAAAEAACcQAAAAEGUG6V67XaJQaBAZmgdc+gYqz0kJlGTY3pPFRFdk8zERA1SmuMiIQgDXzS6anIhwUQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFQYR+Eb/nA/vmDOJlmZzcv/DRdxT2lB5ZsgNyMbADY4yM7q0+DSM10F0Jx5ojWvVA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "80411d3e-4656-47f6-950d-9e80e4e0a87d",
+                            SecurityStamp = "985a0951-79e2-4a98-a11f-206bb8bc1136",
                             TwoFactorEnabled = false,
                             UserName = "storner@fpt.com"
                         });
@@ -371,7 +371,7 @@ namespace WebApplication1.Migrations
                             Author = "Smith",
                             BestSaler = false,
                             CategoryId = 1,
-                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 651, DateTimeKind.Local).AddTicks(5976),
+                            Datee = new DateTime(2022, 12, 18, 16, 11, 0, 247, DateTimeKind.Local).AddTicks(8434),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Nữ Hoàng Tuyết",
                             Price = 69999.0,
@@ -383,7 +383,7 @@ namespace WebApplication1.Migrations
                             Author = "Thomas",
                             BestSaler = false,
                             CategoryId = 1,
-                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3786),
+                            Datee = new DateTime(2022, 12, 18, 16, 11, 0, 248, DateTimeKind.Local).AddTicks(7565),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Hoàng Tử Gấu",
                             Price = 69999.0,
@@ -395,7 +395,7 @@ namespace WebApplication1.Migrations
                             Author = "Thomson",
                             BestSaler = false,
                             CategoryId = 3,
-                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3834),
+                            Datee = new DateTime(2022, 12, 18, 16, 11, 0, 248, DateTimeKind.Local).AddTicks(7620),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Thợ Săn Bóng Đêm",
                             Price = 69999.0,
@@ -407,7 +407,7 @@ namespace WebApplication1.Migrations
                             Author = "Alpha",
                             BestSaler = false,
                             CategoryId = 2,
-                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3837),
+                            Datee = new DateTime(2022, 12, 18, 16, 11, 0, 248, DateTimeKind.Local).AddTicks(7622),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Vua Sư Tử",
                             Price = 69999.0,
@@ -419,7 +419,7 @@ namespace WebApplication1.Migrations
                             Author = "Denta",
                             BestSaler = false,
                             CategoryId = 3,
-                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3839),
+                            Datee = new DateTime(2022, 12, 18, 16, 11, 0, 248, DateTimeKind.Local).AddTicks(7624),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Dải Ngân Hà",
                             Price = 69999.0,
@@ -431,7 +431,7 @@ namespace WebApplication1.Migrations
                             Author = "Catary",
                             BestSaler = false,
                             CategoryId = 1,
-                            Datee = new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3840),
+                            Datee = new DateTime(2022, 12, 18, 16, 11, 0, 248, DateTimeKind.Local).AddTicks(7626),
                             Image = "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0",
                             Name = "Huyền Thoại Võ Thuật",
                             Price = 69999.0,
@@ -510,7 +510,10 @@ namespace WebApplication1.Migrations
                     b.Property<int>("BookId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CustomerId")
+                    b.Property<int>("Customer")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CustomersId")
                         .HasColumnType("int");
 
                     b.Property<int>("Email")
@@ -529,7 +532,7 @@ namespace WebApplication1.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("CustomersId");
 
                     b.ToTable("Orders");
                 });
@@ -602,9 +605,9 @@ namespace WebApplication1.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("WebApplication1.Models.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId");
+                    b.HasOne("WebApplication1.Models.Customer", "Customers")
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomersId");
                 });
 #pragma warning restore 612, 618
         }

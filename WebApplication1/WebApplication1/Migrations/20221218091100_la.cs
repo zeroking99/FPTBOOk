@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApplication1.Migrations
 {
-    public partial class kal : Migration
+    public partial class la : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -55,7 +55,7 @@ namespace WebApplication1.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false)
-                }, 
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
@@ -233,7 +233,8 @@ namespace WebApplication1.Migrations
                     Payment = table.Column<int>(nullable: false),
                     Order_Date = table.Column<DateTime>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
-                    CustomerId = table.Column<int>(nullable: true)
+                    Customer = table.Column<int>(nullable: false),
+                    CustomersId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -245,8 +246,8 @@ namespace WebApplication1.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Orders_Customer_CustomerId",
-                        column: x => x.CustomerId,
+                        name: "FK_Orders_Customer_CustomersId",
+                        column: x => x.CustomersId,
                         principalTable: "Customer",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -257,9 +258,9 @@ namespace WebApplication1.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "A", "75b9e736-0b7a-468a-8125-b594bea209fb", "Administrator", "Administrator" },
-                    { "B", "5387cde2-5fc6-430c-88ee-1b1bd90c9c0a", "Customer", "Customer" },
-                    { "C", "ad810cbd-02ca-4e9e-93a9-da7b9e9773eb", "Storner", "Stornner" }
+                    { "A", "6ca7b6dd-7a53-4f0a-8f50-d34512f70575", "Administrator", "Administrator" },
+                    { "B", "4b82780f-6390-42e5-bfe5-fb9d364986ef", "Customer", "Customer" },
+                    { "C", "0fafc96c-8868-4a88-8d53-975cf8065137", "Storner", "Stornner" }
                 });
 
             migrationBuilder.InsertData(
@@ -267,9 +268,9 @@ namespace WebApplication1.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "1", 0, "c1b5d541-47fa-4b19-9b11-41dacb442fe8", "admin@fpt.com", true, false, null, null, "admin@fpt.com", "AQAAAAEAACcQAAAAEISwzCNm5qrJHzvwkM/9t7OdrhCQepLu+oOFO6dh1+8q8MtkWOVput8rGl2+Fse5lQ==", null, false, "7bb201d6-dd70-4fbc-939f-a2eaee101344", false, "admin@fpt.com" },
-                    { "2", 0, "0beca958-d4f7-4196-a9c7-aa6843d72cec", "customer@fpt.com", true, false, null, null, "customer@fpt.com", "AQAAAAEAACcQAAAAED68jUjrUOarBKAGPKssz6Gu2+oEbsz8seOI6mGzRe9gk6fU1ApONW7nZU05onmsFQ==", null, false, "8ae47687-faae-4136-86eb-0bd439f63205", false, "customer@fpt.com" },
-                    { "3", 0, "7849c41d-2f05-402d-8f22-ba7d35a8b859", "storner@fpt.com", true, false, null, null, "storner@fpt.com", "AQAAAAEAACcQAAAAEGUG6V67XaJQaBAZmgdc+gYqz0kJlGTY3pPFRFdk8zERA1SmuMiIQgDXzS6anIhwUQ==", null, false, "80411d3e-4656-47f6-950d-9e80e4e0a87d", false, "storner@fpt.com" }
+                    { "1", 0, "6563ad85-bb55-4d6f-b9b3-5305a9aa948d", "admin@fpt.com", true, false, null, null, "admin@fpt.com", "AQAAAAEAACcQAAAAEDhgPr45PkpD5kjx3bnT89qq1H9ToBkrcg9BK1YfGfoi12ah2afrKj6rCcJ7WzabvA==", null, false, "14300933-3e6a-4276-a93a-69914c43c640", false, "admin@fpt.com" },
+                    { "2", 0, "c450da08-1010-4a59-82fb-dad915cb788f", "customer@fpt.com", true, false, null, null, "customer@fpt.com", "AQAAAAEAACcQAAAAEDb0QulCT9AJ5wrgaZyLPl03gPxqHxr4JbT/OLCSkDJA15UmtKtZF9VJpI/HXk6d4w==", null, false, "bbf6ef39-9911-4c2f-a889-a94f0ef36af3", false, "customer@fpt.com" },
+                    { "3", 0, "f244c40e-8c7c-4ec4-b321-71122db5f2ab", "storner@fpt.com", true, false, null, null, "storner@fpt.com", "AQAAAAEAACcQAAAAEFQYR+Eb/nA/vmDOJlmZzcv/DRdxT2lB5ZsgNyMbADY4yM7q0+DSM10F0Jx5ojWvVA==", null, false, "985a0951-79e2-4a98-a11f-206bb8bc1136", false, "storner@fpt.com" }
                 });
 
             migrationBuilder.InsertData(
@@ -298,12 +299,12 @@ namespace WebApplication1.Migrations
                 columns: new[] { "Id", "Author", "BestSaler", "CategoryId", "Datee", "Image", "Name", "Price", "Type" },
                 values: new object[,]
                 {
-                    { 1, "Smith", false, 1, new DateTime(2022, 12, 15, 15, 49, 57, 651, DateTimeKind.Local).AddTicks(5976), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Nữ Hoàng Tuyết", 69999.0, "PDF" },
-                    { 2, "Thomas", false, 1, new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3786), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Hoàng Tử Gấu", 69999.0, "PDF" },
-                    { 6, "Catary", false, 1, new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3840), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Huyền Thoại Võ Thuật", 69999.0, "PDF" },
-                    { 4, "Alpha", false, 2, new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3837), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Vua Sư Tử", 69999.0, "PDF" },
-                    { 3, "Thomson", false, 3, new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3834), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Thợ Săn Bóng Đêm", 69999.0, "PDF" },
-                    { 5, "Denta", false, 3, new DateTime(2022, 12, 15, 15, 49, 57, 652, DateTimeKind.Local).AddTicks(3839), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Dải Ngân Hà", 69999.0, "PDF" }
+                    { 1, "Smith", false, 1, new DateTime(2022, 12, 18, 16, 11, 0, 247, DateTimeKind.Local).AddTicks(8434), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Nữ Hoàng Tuyết", 69999.0, "PDF" },
+                    { 2, "Thomas", false, 1, new DateTime(2022, 12, 18, 16, 11, 0, 248, DateTimeKind.Local).AddTicks(7565), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Hoàng Tử Gấu", 69999.0, "PDF" },
+                    { 6, "Catary", false, 1, new DateTime(2022, 12, 18, 16, 11, 0, 248, DateTimeKind.Local).AddTicks(7626), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Huyền Thoại Võ Thuật", 69999.0, "PDF" },
+                    { 4, "Alpha", false, 2, new DateTime(2022, 12, 18, 16, 11, 0, 248, DateTimeKind.Local).AddTicks(7622), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Vua Sư Tử", 69999.0, "PDF" },
+                    { 3, "Thomson", false, 3, new DateTime(2022, 12, 18, 16, 11, 0, 248, DateTimeKind.Local).AddTicks(7620), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Thợ Săn Bóng Đêm", 69999.0, "PDF" },
+                    { 5, "Denta", false, 3, new DateTime(2022, 12, 18, 16, 11, 0, 248, DateTimeKind.Local).AddTicks(7624), "https://th.bing.com/th/id/R.246f8ee1936955f5f1fa148c87e338d0?rik=6nmiN8y2BcarAQ&riu=http%3a%2f%2fwww.kroobannok.com%2fnews_pic%2fp37928861815.jpg&ehk=Hz7fNzyb41xHC%2fnEZkqMtkAX2OUAdzSezzeo5AympSQ%3d&risl=&pid=ImgRaw&r=0", "Dải Ngân Hà", 69999.0, "PDF" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -356,9 +357,9 @@ namespace WebApplication1.Migrations
                 column: "BookId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Orders_CustomerId",
+                name: "IX_Orders_CustomersId",
                 table: "Orders",
-                column: "CustomerId");
+                column: "CustomersId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
